@@ -650,9 +650,10 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 6 "lark.l"
+#line 11 "lark.l"
 
-#line 656 "lex.yy.c"
+
+#line 657 "lex.yy.c"
 
 	if ( !(yy_init) )
 		{
@@ -738,30 +739,30 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 7 "lark.l"
+#line 13 "lark.l"
 ;
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 8 "lark.l"
+#line 14 "lark.l"
 { cout << "Found a floating-point number:" << yytext << endl; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 9 "lark.l"
+#line 15 "lark.l"
 { cout << "Found an integer:" << yytext << endl; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 10 "lark.l"
+#line 16 "lark.l"
 { cout << "Found a string: " << yytext << endl; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 11 "lark.l"
+#line 18 "lark.l"
 ECHO;
 	YY_BREAK
-#line 765 "lex.yy.c"
+#line 766 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1759,12 +1760,15 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 11 "lark.l"
+#line 18 "lark.l"
 
 
-main() {
+
+int main() {
 	// lex through the input:
-		yylex();
-		}
+	yylex();
+	return 0;
+		
+}
 
 
