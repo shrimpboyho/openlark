@@ -1,2 +1,2 @@
 all:
-	g++ main.cpp algo.cpp -o thing
+	g++ lex.yy.c -L"GnuWin32\lib" -lfl -o build/thing	
