@@ -8,6 +8,7 @@ FLOAT [0-9]+\.[0-9]+
 INTEGER [0-9]+
 STRING [a-zA-Z0-9]+
 ASSIGNOP [=]
+EQUALSOP [==]
 ADDOP [+]
 SUBOP [-]
 MULTIPLYOP [*]
@@ -24,6 +25,7 @@ DIVIDEOP [/]
 {MULTIPLYOP}    { cout << "Found a multiplication operator: " << yytext << endl; }
 {DIVIDEOP}      { cout << "Found a division operator: " << yytext << endl; }
 {ASSIGNOP}      { cout << "Found an assignment operator: " << yytext << endl; }
+{EQUALSOP}      { cout << "Found an equals operator: " << yytext << endl; }
 
 %%
 
