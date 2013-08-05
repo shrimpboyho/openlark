@@ -1,12 +1,10 @@
-/*
- * This file is part of the Mingw32 package.
- *
- * unistd.h maps (roughly) to io.h
- */
+#ifdef __MINGW32__
 
-#ifndef __STRICT_ANSI__
+#  include_next <unistd.h>
 
-#include <io.h>
-#include <process.h>
+#else
 
-#endif 
+#  include <io.h>
+#  include <process.h>
+
+#endif
