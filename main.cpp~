@@ -8,12 +8,24 @@ extern "C"
 }
 
 
-int main() {
+int main(int argc, char* argv[]) {
 	
-	cout << "Welcome to OpenLark \n";
+	/* Invoke the REPL */
 
-	// lex through the input:
-	yylex();
+	if(argc == 1){
+		std::cout << "Welcome to OpenLark \n";
+		// lex through the input:
+		yylex();
+	}
+
+	/* Read from file */
+
+	if(argc > 1){
+		std::cout << "Reading from file: " << argv[1] << std::endl;
+		yyin = fopen(argv[1],"w");
+		yylex();
+	}
+
 	return 0;
 		
 }
