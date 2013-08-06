@@ -1,7 +1,7 @@
 openlark
 ====
 
-A command-line interpretter
+A command-line interpreter
 
 How to build:
 
