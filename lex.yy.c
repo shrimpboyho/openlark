@@ -368,8 +368,8 @@ static void yy_fatal_error (yyconst char msg[]  );
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
 
-#define YY_NUM_RULES 10
-#define YY_END_OF_BUFFER 11
+#define YY_NUM_RULES 11
+#define YY_END_OF_BUFFER 12
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -377,10 +377,10 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static yyconst flex_int16_t yy_accept[18] =
+static yyconst flex_int16_t yy_accept[19] =
     {   0,
-        0,    0,   11,   10,    1,    7,    5,    6,    8,    3,
-        9,    4,    0,    3,    4,    2,    0
+        0,    0,   12,   11,    1,    7,    5,    6,    8,    3,
+        9,    4,    0,    3,    4,   10,    2,    0
     } ;
 
 static yyconst flex_int32_t yy_ec[256] =
@@ -420,30 +420,30 @@ static yyconst flex_int32_t yy_meta[11] =
         1,    1,    1,    1,    1,    1,    1,    2,    1,    2
     } ;
 
-static yyconst flex_int16_t yy_base[19] =
+static yyconst flex_int16_t yy_base[20] =
     {   0,
-        0,    0,   17,   18,   18,   18,   18,   18,   18,    5,
-       18,    0,    8,    0,    0,    6,   18,   10
+        0,    0,   18,   19,   19,   19,   19,   19,   19,    5,
+        8,    0,    8,    0,    0,   19,    6,   19,   10
     } ;
 
-static yyconst flex_int16_t yy_def[19] =
+static yyconst flex_int16_t yy_def[20] =
     {   0,
-       17,    1,   17,   17,   17,   17,   17,   17,   17,   17,
-       17,   18,   17,   10,   18,   17,    0,   17
+       18,    1,   18,   18,   18,   18,   18,   18,   18,   18,
+       18,   19,   18,   10,   19,   18,   18,    0,   18
     } ;
 
-static yyconst flex_int16_t yy_nxt[29] =
+static yyconst flex_int16_t yy_nxt[30] =
     {   0,
         4,    5,    6,    7,    8,    4,    9,   10,   11,   12,
-       13,   15,   14,   16,   15,   16,   17,    3,   17,   17,
-       17,   17,   17,   17,   17,   17,   17,   17
+       13,   15,   14,   17,   15,   17,   16,   18,    3,   18,
+       18,   18,   18,   18,   18,   18,   18,   18,   18
     } ;
 
-static yyconst flex_int16_t yy_chk[29] =
+static yyconst flex_int16_t yy_chk[30] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-       10,   18,   10,   16,   10,   13,    3,   17,   17,   17,
-       17,   17,   17,   17,   17,   17,   17,   17
+       10,   19,   10,   17,   10,   13,   11,    3,   18,   18,
+       18,   18,   18,   18,   18,   18,   18,   18,   18
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -652,7 +652,7 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 16 "lark.l"
+#line 17 "lark.l"
 
 
 #line 659 "lex.yy.c"
@@ -708,13 +708,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 18 )
+				if ( yy_current_state >= 19 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 18 );
+		while ( yy_base[yy_current_state] != 19 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -741,55 +741,60 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 18 "lark.l"
+#line 19 "lark.l"
 ;
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 19 "lark.l"
-{ cout << "Found a floating-point number:" << yytext << endl; }
+#line 20 "lark.l"
+{ cout << "Found a floating-point number: " << yytext << endl; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 20 "lark.l"
-{ cout << "Found an integer:" << yytext << endl; }
+#line 21 "lark.l"
+{ cout << "Found an integer: " << yytext << endl; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 21 "lark.l"
+#line 22 "lark.l"
 { cout << "Found a string: " << yytext << endl; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 22 "lark.l"
+#line 23 "lark.l"
 { cout << "Found an addition operator: " << yytext << endl; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 23 "lark.l"
+#line 24 "lark.l"
 { cout << "Found a subtraction operator: " << yytext << endl; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 24 "lark.l"
+#line 25 "lark.l"
 { cout << "Found a multiplication operator: " << yytext << endl; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 25 "lark.l"
+#line 26 "lark.l"
 { cout << "Found a division operator: " << yytext << endl; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 26 "lark.l"
+#line 27 "lark.l"
 { cout << "Found an assignment operator: " << yytext << endl; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
 #line 28 "lark.l"
+{ cout << "Found an equals operator: " << yytext << endl; }
+	YY_BREAK
+case 11:
+YY_RULE_SETUP
+#line 30 "lark.l"
 ECHO;
 	YY_BREAK
-#line 793 "lex.yy.c"
+#line 798 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1081,7 +1086,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 18 )
+			if ( yy_current_state >= 19 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -1109,11 +1114,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 18 )
+		if ( yy_current_state >= 19 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 17);
+	yy_is_jam = (yy_current_state == 18);
 
 	return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1787,7 +1792,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 28 "lark.l"
+#line 30 "lark.l"
 
 
 
