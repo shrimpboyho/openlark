@@ -16,7 +16,7 @@ int main(int argc, char* argv[]) {
 		while(1 == 1){
 			std::cout << ">>> ";
 			std::getline(std::cin,input);
-			CORE.feed(input);
+			std::cout << input << std::endl;
 			std::cout << CORE.getOutput() << std::endl;
 			
 		}
