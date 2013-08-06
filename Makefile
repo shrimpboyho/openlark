@@ -1,3 +1,4 @@
 all:
+	bison -d lark.y
 	flex lark.l
-	g++ lex.yy.c main.cpp -L"GnuWin32\lib" -lfl -o build/thing	
+	g++ lark.tab.c lex.yy.c -L"GnuWin32\lib" -lfl -o build/thing	
