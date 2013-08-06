@@ -10,7 +10,7 @@ extern "C"
 
 int main() {
 	
-	std::cout << "Welcome to OpenLark \n";
+	cout << "Welcome to OpenLark \n";
 
 	// lex through the input:
 	yylex();

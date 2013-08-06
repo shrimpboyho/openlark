@@ -27,10 +27,3 @@ DIVIDEOP [/]
 
 %%
 
-int main() {
-	// lex through the input:
-	yylex();
-	return 0;
-		
-}
-
