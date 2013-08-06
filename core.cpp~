@@ -16,11 +16,21 @@ void Core::flush(){
 }
 
 bool Core::isExpression(std::string testy){
-	return true;
+	if(testy.find("+") != std::string::npos){
+		return true;
+	}
+	else{
+		return false;
+	}
 }
 
 bool Core::isAssignment(std::string testy){
-	return true;
+	if(testy.find("=") != std::string::npos){
+		return true;
+	}
+	else{
+		return false;
+	}
 }
 
 std::string Core::evalExpression(std::string expression){
@@ -35,5 +45,54 @@ std::string Core::to_string(int number){
 }
 
 void Core::feed(std::string ss){
+
+	/* Set the current instruction */
 	this -> currentInstruction = ss;
+	
+	/* Check what phase */
+
+	
+	
+	/* Clear the output buffer */
+	flush();
+}
+
+std::string Core::getVarType(std::string name){
+	int i;
+	for(i = 0; i < variableNames.size(); i++){
+		if(name == variableNames[i]){
+			break;
+		}
+	}
+	return variableTypes[i];
+}
+
+std::string Core::getVarValue(std::string name){
+	int i;
+	for(i = 0; i < variableNames.size(); i++){
+		if(name == variableNames[i]){
+			break;
+		}
+	}
+	return variableValues[i];
+}
+
+bool Core::varExists(std::string name){
+	int i;
+	for(i = 0; i < variableNames.size(); i++){
+		if(name == variableNames[i]){
+			break;
+		}
+	}
+	if(i != variableNames.size()){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+void Core::createVar(std::string name, std::string type, std::string value){
+	variableNames.push_back(name);
+	variableTypes.push_back(type);
+	variableValues.push_back(value);
 }

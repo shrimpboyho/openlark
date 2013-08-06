@@ -14,8 +14,14 @@ class Core{
 		
 		/* System memory */
 		
-		std::vector<std::string> memory;
-		std::vector<std::string> memoryType;
+		std::vector<std::string> variableTypes;
+		std::vector<std::string> variableValues;
+		std::vector<std::string> variableNames;
+
+		std::string getVarType(std::string name);
+		std::string getVarValue(std::string name);
+		bool varExists(std::string name);
+		void createVar(std::string name, std::string type, std::string value);
 
 		/* Parsing and analysis functions */
 
