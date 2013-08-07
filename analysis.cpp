@@ -19,7 +19,7 @@ bool Core::isAssignment(std::string testy){
 }
 
 bool Core::isDeclaration(std::string testy){
-	if(testy.find("int") != std::string::npos){
+	if(testy.find("int ") != std::string::npos){
 		return true;
 	}
 	else{

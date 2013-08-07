@@ -37,6 +37,7 @@ bool Core::varExists(std::string name){
 void Core::createVar(std::string name, std::string type){
 	variableNames.push_back(name);
 	variableTypes.push_back(type);
+	variableValues.push_back("GARBAGE");
 }
 
 void Core::setVarValue(std::string name, std::string value){

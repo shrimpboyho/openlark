@@ -45,6 +45,7 @@ class Core{
 		/* Helper functions */
 
 		std::string to_string(int number);
+		std::vector<std::string> tokenize(std::string thing, char delim);
 	
 	public:
 		
