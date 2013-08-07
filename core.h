@@ -1,7 +1,7 @@
 #include "tools/parser.h"
 #include <iostream>
 #include <vector>
-
+#include <string.h>
 
 class Core{
 
@@ -21,12 +21,18 @@ class Core{
 		std::string getVarType(std::string name);
 		std::string getVarValue(std::string name);
 		bool varExists(std::string name);
-		void createVar(std::string name, std::string type, std::string value);
+		void createVar(std::string name, std::string type);
+		void setVarValue(std::string name, std::string value);
 
 		/* Parsing and analysis functions */
 
+		void checkDeclaration();
+		void simplifyVariables();
+		void evaluateRightHandSide();
+		void performAssignment();
 		bool isExpression(std::string testy);
 		bool isAssignment(std::string testy);
+		bool isDeclaration(std::string testy);
 
 		/* Math functions */
 

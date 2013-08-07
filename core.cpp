@@ -33,6 +33,15 @@ bool Core::isAssignment(std::string testy){
 	}
 }
 
+bool Core::isDeclaration(std::string testy){
+	if(testy.find("int") != std::string::npos){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
 std::string Core::evalExpression(std::string expression){
 	ExpressionParser<int> parser;
 	return this -> to_string(parser.eval(expression));
@@ -53,7 +62,7 @@ void Core::feed(std::string ss){
 	this -> currentInstruction = ss;
 	
 	/* Check what phase */
-
+	checkDeclaration();
 	
 }
 
@@ -91,8 +100,28 @@ bool Core::varExists(std::string name){
 	}
 }
 
-void Core::createVar(std::string name, std::string type, std::string value){
+void Core::createVar(std::string name, std::string type){
 	variableNames.push_back(name);
 	variableTypes.push_back(type);
-	variableValues.push_back(value);
 }
+
+void Core::setVarValue(std::string name, std::string value){
+	int i;
+	for(i = 0; i < variableNames.size(); i++){
+		if(name == variableNames[i]){
+			variableValues[i] = value;
+			break;
+		}
+	}
+
+}
+
+void Core::checkDeclaration(){
+	
+	if(isDeclaration(currentInstruction)){
+		std::cout << "Declaration found";
+		
+	}
+
+}
+
