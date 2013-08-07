@@ -33,7 +33,12 @@ void Core::feed(std::string ss){
 	}	
 
 	/* Interpret the instruction */
-	checkDeclaration();
+	
+	if(isDeclaration(currentInstruction)){
+		checkDeclaration();
+	}
+	
+	
 	
 }
 

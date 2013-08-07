@@ -19,12 +19,17 @@ bool Core::isAssignment(std::string testy){
 }
 
 bool Core::isDeclaration(std::string testy){
-	if(testy.find("int ") != std::string::npos){
-		return true;
+	
+	int i;
+
+	for(i = 0; i < objectTypes.size(); i++){
+		if(testy.find(objectTypes[i] + " ") != std::string::npos){
+			std::cout << "Found " + objectTypes[i] + " declaration\n";
+			return true;
+		}
 	}
-	else{
-		return false;
-	}
+	
+	return false;
 }
 
 bool Core::isDeclarationWithAssignment(std::string testy){

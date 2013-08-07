@@ -2,9 +2,14 @@
 
 void Core::checkDeclaration(){
 	
-	if(isDeclaration(currentInstruction)){
-		std::cout << "Declaration found";
-		
+	if(isDeclarationWithAssignment(currentInstruction)){
+	
+		simplifyDeclarationWithAssignment();
+
 	}
+
+}
+
+void Core::simplifyDeclarationWithAssignment(){
 
 }
