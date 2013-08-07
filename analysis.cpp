@@ -32,9 +32,11 @@ bool Core::isDeclaration(std::string testy){
 	return false;
 }
 
+/* TODO: FIX THIS */
+
 bool Core::isDeclarationWithAssignment(std::string testy){
 	if(testy.find("int ") != std::string::npos && 
-			testy.find("int ") != std::string::npos){
+			testy.find(" = ") != std::string::npos){
 		return true;
 	}
 	else{

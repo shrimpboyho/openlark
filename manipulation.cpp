@@ -18,7 +18,7 @@ std::vector<std::string> Core::tokenize(std::string thing, char delim){
 	std::string backup = "";
 	
 	bool hit = false;
-	int i, k;
+	int i, k, g;
 
 	for(i = 0; i < thing.size(); i++){
 
@@ -52,6 +52,26 @@ std::vector<std::string> Core::tokenize(std::string thing, char delim){
 	if(hit == true){
 		tokens.push_back(backup);
 	}
+	
+	/* TODO: Trim off leading and ending whitespace on each token */
+
+	for(i = 0; i < tokens.size(); i++){
+		for(k = 0; k < tokens[i].size(); k++){
+			if(tokens[i].at(k) == ' '){
+				tokens[i].erase(k,1);
+			}else{
+				break;
+			}
+		}
+		for(g = tokens[i].size() - 1; g >= 0; --g){
+			if(tokens[i].at(g) == ' '){
+				tokens[i].erase(g,1);
+			}else{
+				break;
+			}
+		}
+	}
+
 
 	return tokens;
 
