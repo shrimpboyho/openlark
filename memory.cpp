@@ -1,5 +1,9 @@
 #include "core.h"
 
+/**  GET STUFF FROM THE MEMORY  
+ *	These function here do that
+ * */
+
 std::string Core::getVarType(std::string name){
 	int i;
 	for(i = 0; i < variableNames.size(); i++){
@@ -34,6 +38,10 @@ bool Core::varExists(std::string name){
 	}
 }
 
+/**  PUT STUFF IN THE MEMORY  
+ *	These function here do that
+ * */
+
 void Core::createVar(std::string name, std::string type){
 	variableNames.push_back(name);
 	variableTypes.push_back(type);
@@ -51,3 +59,12 @@ void Core::setVarValue(std::string name, std::string value){
 
 }
 
+/**  DEBUGING TOOLS  
+ *	View the memory
+ * */
+
+void Core::printMemory(){
+
+	
+
+}

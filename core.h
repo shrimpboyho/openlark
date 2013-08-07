@@ -60,5 +60,7 @@ class Core{
 		/* Get output to feed to REPL */
 
 		std::string getOutput();
-
+		
+		/* Debugging purposes */
+		void printMemory();
 };
