@@ -10,7 +10,7 @@ bool Core::isExpression(std::string testy){
 }
 
 bool Core::isAssignment(std::string testy){
-	if(testy.find("=") != std::string::npos){
+	if(testy.find(" = ") != std::string::npos){
 		return true;
 	}
 	else{
@@ -20,6 +20,16 @@ bool Core::isAssignment(std::string testy){
 
 bool Core::isDeclaration(std::string testy){
 	if(testy.find("int ") != std::string::npos){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
+bool Core::isDeclarationWithAssignment(std::string testy){
+	if(testy.find("int ") != std::string::npos && 
+			testy.find("int ") != std::string::npos){
 		return true;
 	}
 	else{

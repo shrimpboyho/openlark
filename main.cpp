@@ -18,6 +18,7 @@ int main(int argc, char* argv[]) {
 			std::getline(std::cin,input);
 			CORE.feed(input);
 			std::cout << CORE.getOutput() << std::endl;
+			CORE.printMemory();
 			
 		}
 

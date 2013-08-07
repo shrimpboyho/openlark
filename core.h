@@ -11,12 +11,16 @@ class Core{
 
 	private:
 
+		/* Language variables */
+
+		std::vector<std::string> objectTypes;
+		
 		/* Time and state variables */
 
 		std::string currentInstruction;
 		std::string currentOutput;
 		
-		/* System memory */
+		/* System memory stuff */
 		
 		std::vector<std::string> variableTypes;
 		std::vector<std::string> variableValues;
@@ -28,15 +32,19 @@ class Core{
 		void createVar(std::string name, std::string type);
 		void setVarValue(std::string name, std::string value);
 
-		/* Parsing and analysis functions */
+		/* Interpreting functions */
 
 		void checkDeclaration();
 		void simplifyVariables();
 		void evaluateRightHandSide();
 		void performAssignment();
+
+		/* Analysis functions */
+
 		bool isExpression(std::string testy);
 		bool isAssignment(std::string testy);
 		bool isDeclaration(std::string testy);
+		bool isDeclarationWithAssignment(std::string testy);
 
 		/* Math functions */
 
@@ -49,16 +57,16 @@ class Core{
 	
 	public:
 		
-		/* Loads instruction */
+		/* Constructor */
+		Core();
 		
+		/* Loads instruction */
 		void feed(std::string ss);
 
 		/* Clears instruction */
-
 		void flush();
 
 		/* Get output to feed to REPL */
-
 		std::string getOutput();
 		
 		/* Debugging purposes */

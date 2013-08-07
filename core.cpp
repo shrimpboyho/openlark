@@ -1,5 +1,14 @@
 #include "core.h"
 
+Core::Core(){
+
+	/* Load up with default types */
+	objectTypes.push_back("int");
+	objectTypes.push_back("float");
+	objectTypes.push_back("string");
+
+}
+
 std::string Core::getOutput(){
 	return this -> currentOutput;
 }

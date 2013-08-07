@@ -65,6 +65,15 @@ void Core::setVarValue(std::string name, std::string value){
 
 void Core::printMemory(){
 
-	
+	int i;
+	std::cout << "===========MEMORY=============\n";
+	for(i = 0; i < variableNames.size(); i++){
+
+		std::cout << variableNames[i] << " "; 
+		std::cout << variableTypes[i] << " "; 
+		std::cout << variableValues[i] << " " << std::endl;
+
+	}
+	std::cout << "==============================\n\n";
 
 }
