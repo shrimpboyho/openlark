@@ -16,7 +16,8 @@ std::vector<std::string> Core::tokenize(std::string thing, char delim){
 	std::vector<std::string> tokens;
 	std::string package = "";
 	std::string backup = "";
-
+	
+	bool hit = false;
 	int i, k;
 
 	for(i = 0; i < thing.size(); i++){
@@ -33,6 +34,7 @@ std::vector<std::string> Core::tokenize(std::string thing, char delim){
 		if(thing.at(i) != delim){
 			package += thing.at(i);
 		}else{
+			hit = true;
 			if(package != ""){
 				tokens.push_back(package);
 				backup = thing.substr(i+1); 	
@@ -43,7 +45,13 @@ std::vector<std::string> Core::tokenize(std::string thing, char delim){
 		}
 	}
 
-	tokens.push_back(backup);
+	if(hit == false){
+		tokens.push_back(package);
+	}
+
+	if(hit == true){
+		tokens.push_back(backup);
+	}
 
 	return tokens;
 
