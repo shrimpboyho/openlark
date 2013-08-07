@@ -2,6 +2,10 @@
 #include <iostream>
 #include <vector>
 #include <string.h>
+#include <iostream>
+#include <string>
+#include <math.h>
+#include <algorithm>
 
 class Core{
 
