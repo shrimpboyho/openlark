@@ -6,6 +6,7 @@
 #include <string>
 #include <math.h>
 #include <algorithm>
+#include <regex>
 
 class Core{
 
@@ -39,7 +40,7 @@ class Core{
 		void checkDeclaration();
 		void checkIfPureMath();
 		void replaceVariablesWithValuesRightHandSide();
-		void performAssignment();
+		void performAssignment(std::string arg);
 		void simplifyDeclarationWithAssignment();
 
 		/* Analysis functions */
