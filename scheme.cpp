@@ -25,6 +25,7 @@ void Core::checkDeclaration(){
 void Core::simplifyDeclarationWithAssignment(){
 
 	rightHandSide = currentInstruction.substr(currentInstruction.find("=") + 1);
+	rightHandSide = clearLeadingWhitespace(rightHandSide);
 	std::cout << "RIGHT HAND SIDE: " << rightHandSide << std::endl;
 	
 	/* See if the right hand side is just a pure math expression that needs to be simplified */
@@ -38,10 +39,22 @@ void Core::simplifyDeclarationWithAssignment(){
 void Core::replaceVariablesWithValuesRightHandSide(){
 	/* If its a single variable */
 
-	std::regex singleVarAssignment("^\\s*[a-zA-Z]+|\\s*");
+	int pos = 0;
+	
+	// Skip leading whitespace
+	while(rightHandSide.at(pos) == ' '){
+		pos++;
+	}
 
-	if(std::regex_match (rightHandSide,singleVarAssignment)){
-		std::cout << "REGEX MATCH FOR SINGLE VAR ASSIGNMENT" << std::endl;
+	for(pos; pos < rightHandSide.size(); pos++){
+		// if its not a single simple variable
+		if(!isalpha(rightHandSide.at(pos))){
+			break;
+		}
+	}
+
+	if(pos == rightHandSide.size()){
+		std::cout << "MATCH FOR SINGLE VAR ASSIGNMENT" << std::endl;
 		/* Replace the variable with its value */
 		rightHandSide = getVarValue(rightHandSide);
 	}

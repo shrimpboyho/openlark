@@ -40,7 +40,7 @@ class Core{
 		void checkDeclaration();
 		void checkIfPureMath();
 		void replaceVariablesWithValuesRightHandSide();
-		void performAssignment();
+		void performAssignment(std::string arg);
 		void simplifyDeclarationWithAssignment();
 
 		/* Analysis functions */

@@ -19,7 +19,7 @@ std::string Core::clearLeadingWhitespace(std::string thing){
 			break;
 		}
 	}
-	goodone = thing.substr(i);
+	goodone = thing.substr(i)
     	return goodone;	
 }
 

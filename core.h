@@ -57,6 +57,7 @@ class Core{
 		/* Helper functions */
 
 		std::string to_string(int number);
+		std::string clearLeadingWhitespace(std::string thing);
 		std::vector<std::string> tokenize(std::string thing, char delim);
 	
 	public:
