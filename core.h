@@ -37,6 +37,7 @@ class Core{
 		/* Interpreting functions */
 
 		void checkDeclaration();
+		void checkIfPureMath();
 		void replaceVariablesWithValuesRightHandSide();
 		void performAssignment();
 		void simplifyDeclarationWithAssignment();

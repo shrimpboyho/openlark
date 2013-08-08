@@ -45,5 +45,5 @@ bool Core::isDeclarationWithAssignment(std::string testy){
 		}
 	}
 	
-	return false;
+	return false
 }

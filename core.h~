@@ -37,7 +37,7 @@ class Core{
 		/* Interpreting functions */
 
 		void checkDeclaration();
-		void replaceVariablesWithValues();
+		void replaceVariablesWithValuesRightHandSide();
 		void performAssignment();
 		void simplifyDeclarationWithAssignment();
 
