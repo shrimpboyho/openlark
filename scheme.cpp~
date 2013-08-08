@@ -18,7 +18,7 @@ void Core::checkDeclaration(){
 
 void Core::simplifyDeclarationWithAssignment(){
 
-	rightHandSide = currentInstruction.substr(currentInstruction.find("=") + 1);
+	rightHandSide = currentInstruction.substr(currentInstruction.find("="));
 	std::cout << "RIGHT HAND SIDE: " << rightHandSide << std::endl;
 	replaceVariablesWithValuesRightHandSide();
 	
