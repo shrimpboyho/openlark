@@ -91,7 +91,14 @@ void Core::performAssignment(std::string arg){
 
 std::string Core::simplificationLoop(std::string s){
 	
+	/* TODO: MAKE THIS PARSER BETTER */
+
 	int i;
 	std::cout << "Simplifying\n";
+	for(i = 0; i < variableNames.size(); i++){
+
+		s = pystring::replace(s, variableNames[i], variableValues[i]);
+
+	}
 	return s;
 }
