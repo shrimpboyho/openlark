@@ -69,7 +69,7 @@ std::vector<std::string> Core::tokenize(std::string thing, char delim){
 
 	for(i = 0; i < tokens.size(); i++){
 		for(k = 0; k < tokens[i].size(); k++){
-			if(tokens[i].at(k) == ' '){
+			if(tokens[i].at(k) == ' ' || tokens[i].at(k) == '\t'){
 				tokens[i].erase(k,1);
 			}else{
 				break;

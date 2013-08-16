@@ -29,10 +29,12 @@ void Core::simplifyDeclarationWithAssignment(){
 	std::cout << "RIGHT HAND SIDE: " << rightHandSide << std::endl;
 	
 	/* See if the right hand side is just a pure math expression that needs to be simplified */
-	checkIfPureMath();
-
-	/* If its not see if variables need to be replaced */
-	replaceVariablesWithValuesRightHandSide();
+	if(checkIfPureMath(rightHandSide) == true){
+		rightHandSide = evalExpression(rightHandSide);
+	}else{
+		/* If its not see if variables need to be replaced */
+		replaceVariablesWithValuesRightHandSide();
+	}
 	
 }
 
@@ -61,22 +63,11 @@ void Core::replaceVariablesWithValuesRightHandSide(){
 
 	/* TODO: If its more than one variable that needs to be replaced */
 	
-}
-
-void Core::checkIfPureMath(){
-		/* Check to see if things need to be replaced in the first place (could just be a math expression)*/
-	int i;
-
-	for(i = 0; i < rightHandSide.size(); i++){
-		if(isalpha(rightHandSide.at(i))){
-			break;
-		}
-	}
-
-	if(i == rightHandSide.size()){
-		rightHandSide = evalExpression(rightHandSide);
+	else{
+		rightHandSide = simplificationLoop(rightHandSide);
 	}
 }
+
 
 /* Function performs assignment */
 
@@ -96,4 +87,11 @@ void Core::performAssignment(std::string arg){
 	
 	
 	
+}
+
+std::string Core::simplificationLoop(std::string s){
+	
+	int i;
+	std::cout << "Simplifying\n";
+	return s;
 }

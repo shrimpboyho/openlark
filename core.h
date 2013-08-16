@@ -1,4 +1,5 @@
 #include "tools/parser.h"
+#include "tools/pystring.h"
 #include <iostream>
 #include <vector>
 #include <string.h>
@@ -25,11 +26,7 @@ typedef struct func_struct{
 
 class Core{
 
-	private:
-
-		/* Inner self (for recursion) */
-
-		Core inner();		
+	private:	
 		
 		/* Language variables */
 
@@ -59,14 +56,16 @@ class Core{
 		/* Interpreting functions */
 
 		void checkDeclaration();
-		void checkIfPureMath();
+		
 		void replaceVariablesWithValuesRightHandSide();
 		void performAssignment(std::string arg);
 		void simplifyDeclarationWithAssignment();
+		std::string simplificationLoop(std::string s);
 
 		/* Analysis functions */
 
 		bool isExpression(std::string testy);
+		bool checkIfPureMath(std::string s);
 		bool isAssignment(std::string testy);
 		bool isDeclaration(std::string testy);
 		bool isDeclarationWithAssignment(std::string testy);
