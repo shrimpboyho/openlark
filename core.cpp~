@@ -6,7 +6,6 @@ Core::Core(){
 	objectTypes.push_back("int");
 	objectTypes.push_back("float");
 	objectTypes.push_back("string");
-	this->inner.printMemory();
 
 }
 
@@ -35,6 +34,8 @@ void Core::feed(std::string ss){
 
 	/* Interpret the instruction */
 	
+	checkBuiltIns(currentInstruction);	
+
 	if(isDeclaration(currentInstruction)){
 		checkDeclaration();
 	}

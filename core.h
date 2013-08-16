@@ -56,6 +56,7 @@ class Core{
 		/* Interpreting functions */
 
 		void checkDeclaration();
+		void checkBuiltIns();
 		
 		void replaceVariablesWithValuesRightHandSide();
 		void performAssignment(std::string arg);

@@ -34,6 +34,8 @@ void Core::feed(std::string ss){
 
 	/* Interpret the instruction */
 	
+	checkBuiltIns();	
+
 	if(isDeclaration(currentInstruction)){
 		checkDeclaration();
 	}

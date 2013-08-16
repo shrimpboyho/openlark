@@ -1,6 +1,27 @@
 #include "core.h"
 #include <ctype.h>
 
+/* Handles any calls to built in features (functions, etc) */
+
+void Core::checkBuiltIns(){
+	
+	/* HANDLE THE BUILT IN PRINT COMMAND */
+	int i;
+	std::vector<std::string> tokens = tokenize(currentInstruction,' ');
+	if(tokens[0] == "print"){
+		std::string everythingElse = "";
+		for(i = 1; i < tokens.size(); i++){
+			everythingElse += " " + tokens[i];	
+		}
+		currentOutput = simplificationLoop(everythingElse);
+	}
+
+	
+
+}
+
+/* Handles declarations */
+
 void Core::checkDeclaration(){
 
 	/* If declaration with assignment */	
@@ -94,11 +115,10 @@ std::string Core::simplificationLoop(std::string s){
 	/* TODO: MAKE THIS PARSER BETTER */
 
 	int i;
-	std::cout << "Simplifying\n";
 	for(i = 0; i < variableNames.size(); i++){
 
 		s = pystring::replace(s, variableNames[i], variableValues[i]);
 
 	}
-	return s;
+	return evalExpression(s);
 }
