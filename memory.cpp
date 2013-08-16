@@ -77,3 +77,33 @@ void Core::printMemory(){
 	std::cout << "==============================\n\n";
 
 }
+
+/**  PUBLIC INTERFACE  
+
+ *	RECURSION STUFF
+ * */
+
+void Core::loadArgs(ARG_STRUCT a){
+
+	int i;
+	for(i = 0; i < a.argNames.size(); i++){
+
+		variableNames.push_back(a.argNames[i]);
+		variableTypes.push_back(a.argTypes[i]);
+		variableValues.push_back(a.argValues[i]);
+
+	}
+
+}
+
+void Core::loadFuncs(FUNC_STRUCT f){
+
+	int i;
+	for(i = 0; i < f.funcNames.size(); i++){
+
+		funcNames.push_back(f.funcNames[i]);
+		funcBodies.push_back(f.funcBodies[i]);
+	}
+
+}
+

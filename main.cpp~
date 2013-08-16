@@ -13,7 +13,7 @@ int main(int argc, char* argv[]) {
 		/* Create a core */
 		Core CORE;
 
-		/* Load the core with arguments (variables) */
+		/* Load the core with stuff */
 
 		ARG_STRUCT a;
 		a.argNames.push_back("bsp");
@@ -21,8 +21,6 @@ int main(int argc, char* argv[]) {
 		a.argValues.push_back("0");
 
 		CORE.loadArgs(a);
-		
-		/* Begin the REPL */
 
 		while(1 == 1){
 			std::cout << ">>> ";

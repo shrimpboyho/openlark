@@ -8,6 +8,21 @@
 #include <algorithm>
 #include <regex>
 
+typedef struct arg_struct{
+
+	std::vector<std::string> argNames;
+	std::vector<std::string> argTypes;
+	std::vector<std::string> argValues;
+
+} ARG_STRUCT;
+
+typedef struct func_struct{
+
+	std::vector<std::string> funcNames;
+	std::vector<std::vector<std::string>> funcBodies;
+
+} FUNC_STRUCT;
+
 class Core{
 
 	private:
@@ -28,6 +43,8 @@ class Core{
 		std::vector<std::string> variableTypes;
 		std::vector<std::string> variableValues;
 		std::vector<std::string> variableNames;
+		std::vector<std::string> funcNames;
+		std::vector<std::vector<std::string>> funcBodies;
 
 		std::string getVarType(std::string name);
 		std::string getVarValue(std::string name);
@@ -67,6 +84,12 @@ class Core{
 		
 		/* Loads instruction */
 		void feed(std::string ss);
+
+		/* Loads arguments */
+		void loadArgs(ARG_STRUCT a);
+
+		/* Loads functions */
+		void loadFuncs(FUNC_STRUCT f);
 
 		/* Clears instruction */
 		void flush();
