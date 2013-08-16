@@ -27,6 +27,10 @@ class Core{
 
 	private:
 
+		/* Inner self (for recursion) */
+
+		Core inner();		
+		
 		/* Language variables */
 
 		std::vector<std::string> objectTypes;

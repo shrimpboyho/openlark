@@ -21,12 +21,16 @@ typedef struct func_struct{
 	std::vector<std::string> funcNames;
 	std::vector<std::vector<std::string>> funcBodies;
 
-} ARG_STRUCT;
+} FUNC_STRUCT;
 
 class Core{
 
 	private:
 
+		/* Inner self (for recursion) */
+
+		Core inner();		
+		
 		/* Language variables */
 
 		std::vector<std::string> objectTypes;
