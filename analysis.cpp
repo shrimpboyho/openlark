@@ -21,9 +21,11 @@ bool Core::isAssignment(std::string testy){
 bool Core::isDeclaration(std::string testy){
 	
 	int i;
+	
+	std::vector<std::string> tokens = tokenize(currentInstruction,' ');
 
 	for(i = 0; i < objectTypes.size(); i++){
-		if(testy.find(objectTypes[i] + " ") != std::string::npos){
+		if(tokens[0] == objectTypes[i]){
 			std::cout << "Found " + objectTypes[i] + " declaration\n";
 			return true;
 		}
@@ -38,9 +40,11 @@ bool Core::isDeclarationWithAssignment(std::string testy){
 
 	int i;
 
+	std::vector<std::string> tokens = tokenize(currentInstruction,' ');
+
 	for(i = 0; i < objectTypes.size(); i++){
-		if(testy.find(objectTypes[i] + " ") != std::string::npos && testy.find(" = ") != std::string::npos){
-			std::cout << "Found " + objectTypes[i] + " declaration\n";
+		if(tokens[0] == objectTypes[i] && testy.find(" = ") != std::string::npos){
+			std::cout << "Found " + objectTypes[i] + " declaration with assignment\n";
 			return true;
 		}
 	}
