@@ -107,18 +107,18 @@ void Core::performAssignment(std::string arg){
 	}
 	
 	
-	
 }
 
 std::string Core::simplificationLoop(std::string s){
 	
 	/* TODO: MAKE THIS PARSER BETTER */
-
 	int i;
-	for(i = 0; i < variableNames.size(); i++){
+	while(checkIfPureMath(s) == false){	
+		for(i = 0; i < variableNames.size(); i++){
 
-		s = pystring::replace(s, variableNames[i], variableValues[i]);
+			s = pystring::replace(s, variableNames[i], variableValues[i]);
 
+		}
 	}
 	return evalExpression(s);
 }
